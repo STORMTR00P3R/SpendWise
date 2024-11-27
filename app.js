@@ -1,5 +1,3 @@
-// WHAT DOES COMP BUDGDGET DO
-
 const balanceLabel = document.getElementById("balance");
 const amountInput = document.getElementById("amount");
 const amountType = document.getElementById("type");
@@ -26,13 +24,23 @@ generateDropdown();
 const account = new Account();
 
 addBtn.addEventListener("click", () => {
+  // CHANGED: Prevent submission with empty input value
+  
+  if (amountInput.value === "") {
+    alert("Empty value. Please enter a valid amount.");
+  } 
+  
   let amount = parseFloat(amountInput.value);
+
   let type = amountType.value;
   let item = document.createElement("li");
+  
+  // FIXME: Expenses label is recreated on every click
   let expObj = document.createElement("p");
   expObj.textContent = "Expenses";
   let prefix = "";
   let exp = document.getElementById("exp");
+ 
 
   if (num == 0) {
     num++;
