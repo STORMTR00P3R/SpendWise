@@ -9,7 +9,7 @@ const account = new Account();
 
 expBtn.addEventListener("click", () => {
   let amount = parseFloat(exp.value);
-  sdew3;
+
   let type = amountType.value;
   if (type == "loss") {
     account.updateBalance(amount, type);
