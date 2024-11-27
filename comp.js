@@ -1,39 +1,35 @@
-// possibly remove any references to the DOM and just have the class handle the balance
-// this is so that the Account class can be reused in other files
-
-class Account {
-  constructor() {
-    this.balance = (2500.0).toFixed(2);
-    // balance.textContent = this.balance;
-  }
-
-  updateBalance(amount, type) {
-    // let amount = parseFloat(amountInput.value);
-    // let type = amountType.value;
-    // let item = document.createElement("li");
-    // let prefix = "";
-
-    if (type == "loss") {
-      this.balance -= amount;
-      // item.style.color = "red";
-      // prefix = "-$"
-    } else {
-      this.balance += amount;
-      // item.style.color = "green";
-      // prefix = "+$"
-    }
-
-    // item.textContent = prefix + amount.toFixed(2);
-    // expensesList.appendChild(item);
-    // balance.textContent = this.balance.toFixed(2);
-    // amountInput.value = "";
-  }
-
-  getBalance() {
-    return this.balance;
-  }
-}
+let amountInput = document.getElementById("newBudget");
+let changeBtn = document.getElementById("Achange");
+let expBtn = document.getElementById("Echange");
+let exp = document.getElementById("newExp");
+let newBudget = document.getElementById("newB");
+let amountType = document.getElementById("type");
 
 const account = new Account();
 
-// manipulate the DOM (HTML file) here, outside of the account class
+expBtn.addEventListener("click", () => {
+  let amount = parseFloat(exp.value);
+  sdew3;
+  let type = amountType.value;
+  if (type == "loss") {
+    account.updateBalance(amount, type);
+  } else {
+    account.updateBalance(amount, type);
+  }
+
+  localStorage.setItem("currentBal", account.balance);
+});
+
+changeBtn.addEventListener("click", () => {
+  let amount = parseFloat(amountInput.value);
+  account.balance = amount;
+
+  newBudget.textContent = account.balance;
+
+  localStorage.setItem("currentBal", account.balance);
+});
+
+if (localStorage.getItem("currentBal") != "") {
+  account.balance = localStorage.getItem("currentBal");
+  newBudget.textContent = account.balance;
+}

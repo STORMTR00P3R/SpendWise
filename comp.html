@@ -28,13 +28,22 @@
       <h4>
         Balance: <strong>$<span id="newB">0</span></strong>
       </h4>
-      <h5>Budget: <input id="newBudget" type="text" /></h5>
-      <button id="change">Add</button>
+      <h5>Set Balance: <input id="newBudget" type="text" /></h5>
+      <button id="Achange">Add</button>
+
+      <h5>Add Expenses: <input id="newExp" type="text" /></h5>
+      <button id="Echange">Add</button>
+
+      <select name="type" id="type" style="margin-inline-end: 1rem">
+        <option value="loss">Loss</option>
+        <option value="gain">Gain</option>
+      </select>
     </main>
 
     <footer>
       <small>© 2024 BetWise. All rights reserved. GNU GPLv3.</small>
     </footer>
-    <!-- hello -->
+    <script src="account.js"></script>
+    <script src="comp.js"></script>
   </body>
 </html>
