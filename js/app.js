@@ -23,24 +23,25 @@ generateDropdown();
 
 const account = new Account();
 
+balanceLabel.textContent = account._balance;
+
 addBtn.addEventListener("click", () => {
   // CHANGED: Prevent submission with empty input value
-  
+
   if (amountInput.value === "") {
     alert("Empty value. Please enter a valid amount.");
-  } 
-  
+  }
+
   let amount = parseFloat(amountInput.value);
 
   let type = amountType.value;
   let item = document.createElement("li");
-  
+
   // FIXME: Expenses label is recreated on every click
   let expObj = document.createElement("p");
   expObj.textContent = "Expenses";
   let prefix = "";
   let exp = document.getElementById("exp");
- 
 
   if (num == 0) {
     num++;
