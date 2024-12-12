@@ -23,7 +23,7 @@ generateDropdown();
 
 const account = new Account();
 
-balanceLabel.textContent = account._balance;
+balanceLabel.textContent = account._balance;    
 
 addBtn.addEventListener("click", () => {
   // CHANGED: Prevent submission with empty input value
@@ -80,3 +80,4 @@ statesDropdown.addEventListener("change", () => {
     })
     .catch((error) => console.error("Error fetching JSON:", error));
 });
+

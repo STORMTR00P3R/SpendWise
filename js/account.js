@@ -1,4 +1,3 @@
-// got rid of refecenscs to DOM to make it work anywherew
 // simple budge
 // just off location
 // compound budget
