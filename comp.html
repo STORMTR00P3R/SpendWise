@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
     <title>Resources</title>
 </head>
@@ -26,6 +27,17 @@
         </nav>
     </header>
     <main>
+
+
+        <div class="w3-light-grey w3-round">
+            <div id="myBar" class="w3-container w3-round w3-red" style="width:0%; padding:0%; color:#212121!important;">
+                0%</div>
+        </div>
+
+        <p id="emoji" style="font-size: 200%">😁</p>
+
+        <button onclick="reset()">reset</button>
+
         <h4>
             Balance: <strong>$<span id="newB">0</span></strong>
         </h4>
