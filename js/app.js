@@ -27,9 +27,9 @@ balanceLabel.textContent = account._balance;
 
 addBtn.addEventListener("click", () => {
     // CHANGED: Prevent submission with empty input value
-
     if (amountInput.value === "") {
         alert("Empty value. Please enter a valid amount.");
+        return;
     }
 
     let amount = parseFloat(amountInput.value);
