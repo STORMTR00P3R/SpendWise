@@ -4,10 +4,11 @@ const amountType = document.getElementById("type");
 const addBtn = document.getElementById("add-btn");
 const expensesList = document.getElementById("expenses-list");
 const statesDropdown = document.getElementById("states");
+let statesData = [];
 let num = 0;
 
 function generateDropdown() {
-    fetch("./states.json")
+    fetch("/api/states")
         .then((response) => response.json())
         .then((data) => {
             data.forEach((stateData) => {
@@ -16,6 +17,8 @@ function generateDropdown() {
                 opt.textContent = stateData.state;
                 statesDropdown.append(opt);
             });
+            statesData = data;
+            console.log(statesData)
         });
 }
 
@@ -71,14 +74,8 @@ addBtn.addEventListener("click", () => {
 });
 
 statesDropdown.addEventListener("change", () => {
-    fetch("./states.json")
-        .then((response) => response.json())
-        .then((data) => {
-            const selectedState = statesDropdown.value;
-            const stateData = data.find((dataObj) => dataObj.state === selectedState);
-            account.updateLocation(stateData);
-            balanceLabel.textContent = account.balance;
-        })
-        .catch((error) => console.error("Error fetching JSON:", error));
+    const selectedState = statesDropdown.value;
+    const stateData = statesData.find((dataObj) => dataObj.state === selectedState);
+    account.updateLocation(stateData);
+    balanceLabel.textContent = account.balance;
 });
-

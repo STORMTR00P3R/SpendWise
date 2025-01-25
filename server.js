@@ -2,20 +2,18 @@ const express = require('express');
 const app = express();
 const port = 8080;
 const path = require('path')
+const statesData = require('./states.json')
+const expData = require('./exp.json')
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname + '/frontend/index.html'));
+app.use(express.static(path.join(__dirname, 'public')))
+
+app.get('/api/states', (req, res) => {
+    res.send(statesData)
 })
 
-app.get('/compound', (req, res) => {
-    res.sendFile(path.join(__dirname + '/frontend/comp.html'))
+app.get('/api/exp', (req, res) => {
+    res.send(expData)
 })
-
-app.get('/resources', (req, res) => {
-    res.sendFile(path.join(__dirname + '/frontend/re.html'))
-})
-
-
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

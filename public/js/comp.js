@@ -70,7 +70,7 @@ function reset() {
 }
 
 function generateDropdown() {
-    fetch("./exp.json")
+    fetch("/api/exp")
         .then((response) => response.json())
         .then((data) => {
             data.forEach((expData) => {

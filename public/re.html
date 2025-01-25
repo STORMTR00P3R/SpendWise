@@ -4,17 +4,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
-    <title>Resources</title>
+    <title>BetWise</title>
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="frontend/index.html">Simple Budget</a>
-            <a href="frontend/comp.html">Compound Budget</a>
-            <a href="frontend/re.html">Resources</a>
+            <a href="/">Simple Budget</a>
+            <a href="#">Compound Budget</a>
+            <a href="re.html">Resources</a>
             <a href="https://github.com/STORMTR00P3R/BetWise"><svg style="height: 1rem" class="icon"
                     viewBox="0 0 32 32">
                     <path
@@ -22,44 +21,34 @@
                     </path>
                 </svg>
                 GitHub</a>
-            <h1>Compound Budget</h1>
-            <p>Advanced Budget</p>
         </nav>
+
+        <h1>BetWise</h1>
+        <p>A web app for managing your gambling budget.</p>
     </header>
     <main>
-
-
-        <div class="w3-light-grey w3-round">
-            <div id="myBar" class="w3-container w3-round w3-red" style="width:0%; padding:0%; color:#212121!important;">
-                0%</div>
-        </div>
-
-        <p id="emoji" style="font-size: 200%">😁</p>
-
-        <button onclick="reset()">reset</button>
-
-        <h4>
-            Balance: <strong>$<span id="newB">0</span></strong>
-        </h4>
-        <h5>Budget: <input id="newBudget" type="text" /></h5>
-        <button id="Achange">Add</button>
-
-        <h5>Add Expenses: <input id="newExp" type="text" /></h5>
-        <!-- add a field for expenses-list  -->
-        <label for="">Expense Type</label>
-        <select name="exp" id="exp"></select>
-
-        <button id="Echange">Add</button>
-
-        <div id="expDiv"></div>
-        <ul id="expenses-list"></ul>
+        <section>
+            <h2>Resources</h2>
+            <ul>
+                <li>
+                    <a href="https://www.ncpgambling.org/help-treatment/help-by-state/nevada/">NCP Gambling</a>
+                </li>
+                <li>
+                    <a href="https://consumer.gov/managing-your-money/making-budget">Consumer.gov</a>
+                </li>
+                <li>
+                    <a href="https://studentaid.gov/resources/prepare-for-college/students/budgeting">Federal Student
+                        Aid</a>
+                </li>
+            </ul>
+        </section>
     </main>
 
     <footer>
         <small>© 2024 BetWise. All rights reserved. GNU GPLv3.</small>
     </footer>
-    <script src="frontend/js/account.js"></script>
-    <script src="frontend/js/comp.js"></script>
+
+    <script src="js/app.js"></script>
 </body>
 
 </html>
