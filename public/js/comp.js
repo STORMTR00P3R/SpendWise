@@ -70,7 +70,7 @@ function reset() {
 }
 
 function generateDropdown() {
-    fetch("/api/exp")
+    fetch("/api/categories")
         .then((response) => response.json())
         .then((data) => {
             data.forEach((expData) => {
@@ -81,6 +81,16 @@ function generateDropdown() {
             });
         });
 }
+
+function fetchExp() {
+    fetch("/api/expenses")
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data)
+        });
+}
+
+fetchExp();
 
 generateDropdown();
 
@@ -133,15 +143,3 @@ if (localStorage.getItem("currentBal") != "") {
     account.balance = localStorage.getItem("currentBal");
     newBudget.textContent = account.balance;
 }
-
-//   expDropdown.addEventListener("change", () => {
-//     fetch("./exp.json")
-//       .then((response) => response.json())
-//       .then((data) => {
-//         const selectedExp = expDropdown.value;
-//         const expData = data.find((dataObj) => dataObj.type === selectedExp);
-//         account.updateLocation(expData);
-//         balanceLabel.textContent = account.balance;
-//       })
-//       .catch((error) => console.error("Error fetching JSON:", error));
-//   });

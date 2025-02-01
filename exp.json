@@ -1,142 +1,52 @@
 [
     {
-        "type": "Housing",
-        "examples": [
-            "rent",
-            "mortgage",
-            "property taxes",
-            "home insurance",
-            "utilities"
-        ]
+        "id": 1,
+        "amount": 850.00,
+        "category": "Housing"
     },
     {
-        "type": "Transportation",
-        "examples": [
-            "gas",
-            "car payment",
-            "insurance",
-            "public transit",
-            "parking",
-            "maintenance"
-        ]
+        "id": 2,
+        "amount": 120.75,
+        "category": "Transportation"
     },
     {
-        "type": "Food",
-        "examples": [
-            "groceries",
-            "dining out",
-            "takeout",
-            "coffee shops"
-        ]
+        "id": 3,
+        "amount": 45.30,
+        "category": "Food"
     },
     {
-        "type": "Healthcare",
-        "examples": [
-            "insurance",
-            "doctor visits",
-            "prescriptions",
-            "dental care",
-            "vision care"
-        ]
+        "id": 4,
+        "amount": 200.00,
+        "category": "Healthcare"
     },
     {
-        "type": "Utilities",
-        "examples": [
-            "electricity",
-            "water",
-            "gas",
-            "internet",
-            "phone"
-        ]
+        "id": 5,
+        "amount": 95.60,
+        "category": "Utilities"
     },
     {
-        "type": "Debt",
-        "examples": [
-            "credit card payments",
-            "student loans",
-            "personal loans",
-            "debt repayment"
-        ]
+        "id": 6,
+        "amount": 150.00,
+        "category": "Debt"
     },
     {
-        "type": "Savings",
-        "examples": [
-            "retirement savings",
-            "emergency fund",
-            "investments",
-            "college savings"
-        ]
+        "id": 7,
+        "amount": 300.00,
+        "category": "Savings"
     },
     {
-        "type": "Insurance",
-        "examples": [
-            "health insurance",
-            "auto insurance",
-            "life insurance",
-            "homeowners insurance"
-        ]
+        "id": 8,
+        "amount": 75.50,
+        "category": "Entertainment"
     },
     {
-        "type": "Education",
-        "examples": [
-            "tuition",
-            "books",
-            "courses",
-            "student fees"
-        ]
+        "id": 9,
+        "amount": 60.25,
+        "category": "Personal Care"
     },
     {
-        "type": "Childcare",
-        "examples": [
-            "daycare",
-            "babysitting",
-            "school fees",
-            "extracurricular activities"
-        ]
-    },
-    {
-        "type": "Entertainment",
-        "examples": [
-            "movies",
-            "concerts",
-            "theater",
-            "streaming services",
-            "games",
-            "events"
-        ]
-    },
-    {
-        "type": "Personal Care",
-        "examples": [
-            "haircuts",
-            "spa services",
-            "toiletries",
-            "cosmetics"
-        ]
-    },
-    {
-        "type": "Clothing",
-        "examples": [
-            "clothes",
-            "shoes",
-            "accessories"
-        ]
-    },
-    {
-        "type": "Gifts & Donations",
-        "examples": [
-            "gifts",
-            "charitable donations",
-            "holiday gifts"
-        ]
-    },
-    {
-        "type": "Miscellaneous",
-        "examples": [
-            "pet expenses",
-            "hobbies",
-            "laundry",
-            "random expenses"
-        ]
+        "id": 10,
+        "amount": 35.80,
+        "category": "Gifts & Donations"
     }
 ]

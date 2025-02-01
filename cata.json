@@ -1,0 +1,142 @@
+[
+    {
+        "type": "Housing",
+        "examples": [
+            "rent",
+            "mortgage",
+            "property taxes",
+            "home insurance",
+            "utilities"
+        ]
+    },
+    {
+        "type": "Transportation",
+        "examples": [
+            "gas",
+            "car payment",
+            "insurance",
+            "public transit",
+            "parking",
+            "maintenance"
+        ]
+    },
+    {
+        "type": "Food",
+        "examples": [
+            "groceries",
+            "dining out",
+            "takeout",
+            "coffee shops"
+        ]
+    },
+    {
+        "type": "Healthcare",
+        "examples": [
+            "insurance",
+            "doctor visits",
+            "prescriptions",
+            "dental care",
+            "vision care"
+        ]
+    },
+    {
+        "type": "Utilities",
+        "examples": [
+            "electricity",
+            "water",
+            "gas",
+            "internet",
+            "phone"
+        ]
+    },
+    {
+        "type": "Debt",
+        "examples": [
+            "credit card payments",
+            "student loans",
+            "personal loans",
+            "debt repayment"
+        ]
+    },
+    {
+        "type": "Savings",
+        "examples": [
+            "retirement savings",
+            "emergency fund",
+            "investments",
+            "college savings"
+        ]
+    },
+    {
+        "type": "Insurance",
+        "examples": [
+            "health insurance",
+            "auto insurance",
+            "life insurance",
+            "homeowners insurance"
+        ]
+    },
+    {
+        "type": "Education",
+        "examples": [
+            "tuition",
+            "books",
+            "courses",
+            "student fees"
+        ]
+    },
+    {
+        "type": "Childcare",
+        "examples": [
+            "daycare",
+            "babysitting",
+            "school fees",
+            "extracurricular activities"
+        ]
+    },
+    {
+        "type": "Entertainment",
+        "examples": [
+            "movies",
+            "concerts",
+            "theater",
+            "streaming services",
+            "games",
+            "events"
+        ]
+    },
+    {
+        "type": "Personal Care",
+        "examples": [
+            "haircuts",
+            "spa services",
+            "toiletries",
+            "cosmetics"
+        ]
+    },
+    {
+        "type": "Clothing",
+        "examples": [
+            "clothes",
+            "shoes",
+            "accessories"
+        ]
+    },
+    {
+        "type": "Gifts & Donations",
+        "examples": [
+            "gifts",
+            "charitable donations",
+            "holiday gifts"
+        ]
+    },
+    {
+        "type": "Miscellaneous",
+        "examples": [
+            "pet expenses",
+            "hobbies",
+            "laundry",
+            "random expenses"
+        ]
+    }
+]
