@@ -8,6 +8,7 @@ const cataData = require('./cata.json')
 let arr = expData;
 
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.json())
 
 app.get('/api/states', (req, res) => {
     res.send(statesData)
@@ -23,6 +24,7 @@ app.get('/api/expenses', (req, res) => {
 
 app.post('/api/expenses', (req, res) => {
     res.send(arr)
+    console.log(req.body)
 })
 
 app.listen(port, () => {
