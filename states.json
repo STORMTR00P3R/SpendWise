@@ -1,50 +1,194 @@
 [
-  { "state": "Alabama", "average": 2500 },
-  { "state": "Alaska", "average": 4000 },
-  { "state": "Arizona", "average": 3000 },
-  { "state": "Arkansas", "average": 2500 },
-  { "state": "California", "average": 4800 },
-  { "state": "Colorado", "average": 3800 },
-  { "state": "Connecticut", "average": 5100 },
-  { "state": "Delaware", "average": 3800 },
-  { "state": "Florida", "average": 3200 },
-  { "state": "Georgia", "average": 3200 },
-  { "state": "Idaho", "average": 3000 },
-  { "state": "Illinois", "average": 3800 },
-  { "state": "Indiana", "average": 3200 },
-  { "state": "Iowa", "average": 3300 },
-  { "state": "Kansas", "average": 3200 },
-  { "state": "Kentucky", "average": 2900 },
-  { "state": "Louisiana", "average": 3100 },
-  { "state": "Maine", "average": 3300 },
-  { "state": "Maryland", "average": 5500 },
-  { "state": "Massachusetts", "average": 5700 },
-  { "state": "Michigan", "average": 3200 },
-  { "state": "Minnesota", "average": 3800 },
-  { "state": "Mississippi", "average": 2500 },
-  { "state": "Missouri", "average": 3200 },
-  { "state": "Montana", "average": 3100 },
-  { "state": "Nebraska", "average": 3500 },
-  { "state": "Nevada", "average": 3900 },
-  { "state": "New Hampshire", "average": 5100 },
-  { "state": "New Jersey", "average": 5700 },
-  { "state": "New Mexico", "average": 2900 },
-  { "state": "New York", "average": 5300 },
-  { "state": "North Carolina", "average": 3300 },
-  { "state": "North Dakota", "average": 3800 },
-  { "state": "Ohio", "average": 3200 },
-  { "state": "Oklahoma", "average": 3100 },
-  { "state": "Oregon", "average": 3800 },
-  { "state": "Pennsylvania", "average": 3500 },
-  { "state": "Rhode Island", "average": 4600 },
-  { "state": "South Carolina", "average": 3200 },
-  { "state": "South Dakota", "average": 3500 },
-  { "state": "Tennessee", "average": 3100 },
-  { "state": "Texas", "average": 3500 },
-  { "state": "Vermont", "average": 3500 },
-  { "state": "Virginia", "average": 4400 },
-  { "state": "Washington", "average": 5100 },
-  { "state": "West Virginia", "average": 2700 },
-  { "state": "Wisconsin", "average": 3500 },
-  { "state": "Wyoming", "average": 3800 }
+    {
+        "state": "Alabama",
+        "average": 2500
+    },
+    {
+        "state": "Alaska",
+        "average": 4000
+    },
+    {
+        "state": "Arizona",
+        "average": 3000
+    },
+    {
+        "state": "Arkansas",
+        "average": 2500
+    },
+    {
+        "state": "California",
+        "average": 4800
+    },
+    {
+        "state": "Colorado",
+        "average": 3800
+    },
+    {
+        "state": "Connecticut",
+        "average": 5100
+    },
+    {
+        "state": "Delaware",
+        "average": 3800
+    },
+    {
+        "state": "Florida",
+        "average": 3200
+    },
+    {
+        "state": "Georgia",
+        "average": 3200
+    },
+    {
+        "state": "Idaho",
+        "average": 3000
+    },
+    {
+        "state": "Illinois",
+        "average": 3800
+    },
+    {
+        "state": "Indiana",
+        "average": 3200
+    },
+    {
+        "state": "Iowa",
+        "average": 3300
+    },
+    {
+        "state": "Kansas",
+        "average": 3200
+    },
+    {
+        "state": "Kentucky",
+        "average": 2900
+    },
+    {
+        "state": "Louisiana",
+        "average": 3100
+    },
+    {
+        "state": "Maine",
+        "average": 3300
+    },
+    {
+        "state": "Maryland",
+        "average": 5500
+    },
+    {
+        "state": "Massachusetts",
+        "average": 5700
+    },
+    {
+        "state": "Michigan",
+        "average": 3200
+    },
+    {
+        "state": "Minnesota",
+        "average": 3800
+    },
+    {
+        "state": "Mississippi",
+        "average": 2500
+    },
+    {
+        "state": "Missouri",
+        "average": 3200
+    },
+    {
+        "state": "Montana",
+        "average": 3100
+    },
+    {
+        "state": "Nebraska",
+        "average": 3500
+    },
+    {
+        "state": "Nevada",
+        "average": 3900
+    },
+    {
+        "state": "New Hampshire",
+        "average": 5100
+    },
+    {
+        "state": "New Jersey",
+        "average": 5700
+    },
+    {
+        "state": "New Mexico",
+        "average": 2900
+    },
+    {
+        "state": "New York",
+        "average": 5300
+    },
+    {
+        "state": "North Carolina",
+        "average": 3300
+    },
+    {
+        "state": "North Dakota",
+        "average": 3800
+    },
+    {
+        "state": "Ohio",
+        "average": 3200
+    },
+    {
+        "state": "Oklahoma",
+        "average": 3100
+    },
+    {
+        "state": "Oregon",
+        "average": 3800
+    },
+    {
+        "state": "Pennsylvania",
+        "average": 3500
+    },
+    {
+        "state": "Rhode Island",
+        "average": 4600
+    },
+    {
+        "state": "South Carolina",
+        "average": 3200
+    },
+    {
+        "state": "South Dakota",
+        "average": 3500
+    },
+    {
+        "state": "Tennessee",
+        "average": 3100
+    },
+    {
+        "state": "Texas",
+        "average": 3500
+    },
+    {
+        "state": "Vermont",
+        "average": 3500
+    },
+    {
+        "state": "Virginia",
+        "average": 4400
+    },
+    {
+        "state": "Washington",
+        "average": 5100
+    },
+    {
+        "state": "West Virginia",
+        "average": 2700
+    },
+    {
+        "state": "Wisconsin",
+        "average": 3500
+    },
+    {
+        "state": "Wyoming",
+        "average": 3800
+    }
 ]

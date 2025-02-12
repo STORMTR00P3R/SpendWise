@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "amount": 850.00,
+        "amount": 850,
         "category": "Housing"
     },
     {
@@ -11,32 +11,32 @@
     },
     {
         "id": 3,
-        "amount": 45.30,
+        "amount": 45.3,
         "category": "Food"
     },
     {
         "id": 4,
-        "amount": 200.00,
+        "amount": 200,
         "category": "Healthcare"
     },
     {
         "id": 5,
-        "amount": 95.60,
+        "amount": 95.6,
         "category": "Utilities"
     },
     {
         "id": 6,
-        "amount": 150.00,
+        "amount": 150,
         "category": "Debt"
     },
     {
         "id": 7,
-        "amount": 300.00,
+        "amount": 300,
         "category": "Savings"
     },
     {
         "id": 8,
-        "amount": 75.50,
+        "amount": 75.5,
         "category": "Entertainment"
     },
     {
@@ -46,7 +46,17 @@
     },
     {
         "id": 10,
-        "amount": 35.80,
+        "amount": 35.8,
         "category": "Gifts & Donations"
+    },
+    {
+        "id": 11,
+        "amount": 40,
+        "category": "Food"
+    },
+    {
+        "id": 12,
+        "amount": 100,
+        "category": "boom"
     }
 ]
