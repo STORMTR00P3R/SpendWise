@@ -24,9 +24,11 @@ app.get('/api/expenses', (req, res) => {
 })
 
 app.post('/api/expense', (req, res) => {
-    arr.push(req.body)
-    const newData = JSON.stringify(arr)
-    fs.writeFile('exp.json', newData, (err) => {
+    const newData = req.body
+    newData.id = arr[arr.length - 1].id + 1;
+    arr.push(newData)
+
+    fs.writeFile('exp.json', JSON.stringify(arr), (err) => {
         if (err) {
             console.error("Error writing file:", err);
         } else {
@@ -36,12 +38,40 @@ app.post('/api/expense', (req, res) => {
     res.send(arr);
 })
 
+app.put('/api/expense', (req, res) => {
+    let updatedItem = req.body
+
+    const newData = expData.map((expense, index) => {
+        if (expense.id === updatedItem.id) {
+            return updatedItem
+        } else {
+            return expense
+        }
+    })
+    fs.writeFile('exp.json', JSON.stringify(newData), (err) => {
+        if (err) {
+            console.error("Error writing file:", err);
+        } else {
+            console.log("Successfully wrote to data.json");
+        }
+    })
+
+    res.send(newData);
+})
+
 app.delete('/api/expense', (req, res) => {
     let newArr = arr.filter((expense) => {
         if (req.body.id != expense.id) {
             return true;
         }
     });
+    fs.writeFile('exp.json', JSON.stringify(newArr), (err) => {
+        if (err) {
+            console.error("Error writing file:", err);
+        } else {
+            console.log("Successfully wrote to data.json");
+        }
+    })
     res.send(newArr);
 })
 
