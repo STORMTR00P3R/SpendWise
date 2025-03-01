@@ -52,8 +52,6 @@ app.post('/api/expense', (req, res) => {
     fs.writeFile('exp.json', JSON.stringify(arr), (err) => {
         if (err) {
             res.status(500).send({ error: "Error with server: cannot write to database" })
-        } else {
-            console.log("Successfully wrote to data.json")
         }
     })
     res.status(201).send(arr)
@@ -82,8 +80,6 @@ app.put('/api/expense', (req, res) => {
     fs.writeFile('exp.json', JSON.stringify(newData), (err) => {
         if (err) {
             res.status(500).send({ error: "Error with server: cannot write to database" })
-        } else {
-            console.log("Successfully wrote to data.json");
         }
     })
 
@@ -110,8 +106,6 @@ app.delete('/api/expense', (req, res) => {
     fs.writeFile('exp.json', JSON.stringify(newArr), (err) => {
         if (err) {
             res.status(500).send({ error: "Error with server: cannot write to database" })
-        } else {
-            console.log("Successfully wrote to data.json");
         }
     })
     res.status(200).send(expData)
