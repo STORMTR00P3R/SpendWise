@@ -1,5 +1,5 @@
 import * as express from 'express'
-import expData from '../exp.json'
+import expData from '../exp.json' with { type: "json" };
 
 const expenseRouter = express.Router()
 

@@ -5,6 +5,7 @@ import expData from './exp.json' with { type: "json" };
 import cataData from './cata.json' with { type: "json" };
 import fs from 'fs'
 import { expenseRouter } from './routes/expenseRouter.js'
+import { statesRouter } from './routes/statesRouter.js'
 
 const __dirname = path.resolve();
 const app = express();
@@ -15,13 +16,11 @@ let arr = expData;
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json())
 
-app.get('/api/states', (req, res) => {
-    res.status(200).send(statesData)
-})
-
 app.get('/api/categories', (req, res) => {
     res.status(200).send(newData)
 })
+
+app.use('/api/states', statesRouter)
 
 app.use('/api/expenses', expenseRouter)
 
