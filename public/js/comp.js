@@ -11,7 +11,7 @@ let total = 0;
 
 let hExpenses = [];
 
-hExpenses = JSON.parse(localStorage.getItem("history"));
+// hExpenses = JSON.parse(localStorage.getItem("history"));
 
 if (hExpenses == null) {
     hExpenses = [];
@@ -78,6 +78,7 @@ function generateDropdown() {
                 opt.value = expData.type;
                 opt.textContent = expData.type;
                 expDropdown.append(opt);
+                
             });
         });
 }
@@ -86,7 +87,32 @@ function fetchExp() {
     fetch("/api/expenses")
         .then((response) => response.json())
         .then((data) => {
+            expensesList.textContent = ""
             console.log(data)
+            for (let i = 0; i < data.length; i++) {
+                let del = document.createElement("button")
+                del.textContent = "Delete Expense"
+                let item = document.createElement("li")
+                item.textContent = "-$" + data[i].amount + " " + data[i].category
+                item.style.color = "red"
+                expensesList.appendChild(item)
+                expensesList.appendChild(del)
+
+                del.addEventListener("click", () => {
+                    fetch("/api/expenses", {
+                        method: "DELETE",
+            
+                        body: JSON.stringify({id: data[i].id}),
+            
+                        headers: {
+                            "Content-type": "application/json; charset=UTF-8"
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(json => {expensesList.removeChild(item) 
+                                   expensesList.removeChild(del)})
+                })
+            }
         });
 }
 
@@ -117,7 +143,17 @@ expBtn.addEventListener("click", () => {
 
         hExpenses.push(newExpense);
 
-        localStorage.setItem("history", JSON.stringify(hExpenses));
+        fetch("/api/expenses", {
+            method: "POST",
+
+            body: JSON.stringify(newExpense),
+
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        })
+        .then(response => response.json())
+        .then(json => fetchExp())
 
         totalExp();
 

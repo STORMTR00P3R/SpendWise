@@ -14,7 +14,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/betwise').then(() => console.log('Co
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json())
-
+    
 app.use('/api/categories', catagoryRouter)
 
 app.use('/api/states', statesRouter)

@@ -1,5 +1,6 @@
 import * as express from 'express'
 import expData from '../exp.json' with { type: "json" };
+import fs from 'fs'
 
 const expenseRouter = express.Router()
 
@@ -27,18 +28,19 @@ expenseRouter.get('/:id', (req, res) => {
 
 expenseRouter.post('/', (req, res) => {
     const newData = req.body
+    console.log(newData)
     if (!newData.amount || !newData.category) {
         res.status(400).send({ error: "Amount or category missing from request" })
     }
-    newData.id = arr[arr.length - 1].id + 1;
-    arr.push(newData)
+    newData.id = expData[expData.length - 1].id + 1;
+    expData.push(newData)
 
-    fs.writeFile('exp.json', JSON.stringify(arr), (err) => {
+    fs.writeFile('exp.json', JSON.stringify(expData), (err) => {
         if (err) {
             res.status(500).send({ error: "Error with server: cannot write to database" })
         }
     })
-    res.status(201).send(arr)
+    res.status(201).send(expData)
 })
 
 expenseRouter.put('/', (req, res) => {
@@ -82,7 +84,7 @@ expenseRouter.delete('/', (req, res) => {
         res.status(404).send({ error: "Expense data not found" })
     }
 
-    let newArr = arr.filter((expense) => {
+    let newArr = expData.filter((expense) => {
         if (req.body.id != expense.id) {
             return true;
         }
