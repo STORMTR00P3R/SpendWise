@@ -1,11 +1,13 @@
+import Expense from "../models/expenseSchema.js"
 import * as express from 'express'
 import expData from '../exp.json' with { type: "json" };
 import fs from 'fs'
 
 const expenseRouter = express.Router()
 
-expenseRouter.get('/', (req, res) => {
-    res.status(200).send(expData)
+expenseRouter.get('/', async (req, res) => {
+    const result = await Expense.find()
+    res.status(200).send(result)
 })
 
 expenseRouter.get('/:id', (req, res) => {
@@ -26,25 +28,17 @@ expenseRouter.get('/:id', (req, res) => {
     }
 })
 
-expenseRouter.post('/', (req, res) => {
+expenseRouter.post('/', async (req, res) => {
     const newData = req.body
+    
     console.log(newData)
     if (!newData.amount || !newData.category) {
         res.status(400).send({ error: "Amount or category missing from request" })
     } 
-    if(expData.length === 0) {
-        newData.id = 1
-    } else {
-        newData.id = expData[expData.length - 1].id + 1;
-    }
-    expData.push(newData)
 
-    fs.writeFile('exp.json', JSON.stringify(expData), (err) => {
-        if (err) {
-            res.status(500).send({ error: "Error with server: cannot write to database" })
-        }
-    })
-    res.status(201).send(expData)
+    const newExpense = await Expense.create(req.body) 
+
+    res.status(201).send(newExpense)
 })
 
 expenseRouter.put('/', (req, res) => {
