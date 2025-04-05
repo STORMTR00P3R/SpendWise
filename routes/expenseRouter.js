@@ -31,8 +31,12 @@ expenseRouter.post('/', (req, res) => {
     console.log(newData)
     if (!newData.amount || !newData.category) {
         res.status(400).send({ error: "Amount or category missing from request" })
+    } 
+    if(expData.length === 0) {
+        newData.id = 1
+    } else {
+        newData.id = expData[expData.length - 1].id + 1;
     }
-    newData.id = expData[expData.length - 1].id + 1;
     expData.push(newData)
 
     fs.writeFile('exp.json', JSON.stringify(expData), (err) => {

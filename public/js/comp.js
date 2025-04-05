@@ -98,19 +98,40 @@ function fetchExp() {
                 expensesList.appendChild(item)
                 expensesList.appendChild(del)
 
+                
                 del.addEventListener("click", () => {
-                    fetch("/api/expenses", {
-                        method: "DELETE",
-            
-                        body: JSON.stringify({id: data[i].id}),
-            
-                        headers: {
-                            "Content-type": "application/json; charset=UTF-8"
-                        }
+                    var modal = document.getElementById("myModal");
+                    var yes = document.getElementById("yes");
+                    var no = document.getElementById("no");
+                    var span = document.getElementsByClassName("close")[0];
+                    modal.style.display = "block";
+                    
+                    span.onclick = function() {
+                        modal.style.display = "none";
+                    }
+                    window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                    }
+                    no.addEventListener("click", (event) => {
+                        modal.style.display = "none";
                     })
-                    .then(response => response.json())
-                    .then(json => {expensesList.removeChild(item) 
-                                   expensesList.removeChild(del)})
+                    yes.addEventListener("click", (event) => {
+                        modal.style.display = "none";
+                        fetch("/api/expenses", {
+                            method: "DELETE",
+                
+                            body: JSON.stringify({id: data[i].id}),
+                
+                            headers: {
+                                "Content-type": "application/json; charset=UTF-8"
+                            }
+                        })
+                        .then(response => response.json())
+                        .then(json => {expensesList.removeChild(item) 
+                                       expensesList.removeChild(del)})
+                    })
                 })
             }
         });
