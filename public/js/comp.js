@@ -97,7 +97,6 @@ function fetchExp() {
                 item.style.color = "red"
                 expensesList.appendChild(item)
                 expensesList.appendChild(del)
-
                 
                 del.addEventListener("click", () => {
                     var modal = document.getElementById("myModal");
@@ -122,7 +121,7 @@ function fetchExp() {
                         fetch("/api/expenses", {
                             method: "DELETE",
                 
-                            body: JSON.stringify({id: data[i].id}),
+                            body: JSON.stringify({_id: data[i]._id}),
                 
                             headers: {
                                 "Content-type": "application/json; charset=UTF-8"
@@ -132,6 +131,42 @@ function fetchExp() {
                         .then(json => {expensesList.removeChild(item) 
                                        expensesList.removeChild(del)})
                     })
+                })
+                
+
+                let edit = document.createElement("button")
+                edit.textContent = "Edit Expense"
+                expensesList.appendChild(edit)
+
+                edit.addEventListener("click", () => {
+                    var modal = document.getElementById("editModal");
+                    //var yes = document.getElementById("yes");
+                    var span = document.getElementsByClassName("close")[1];
+                    modal.style.display = "block";
+                    
+                    span.onclick = function() {
+                        modal.style.display = "none";
+                    }
+                    window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                    }
+                    // yes.addEventListener("click", (event) => {
+                    //     modal.style.display = "none";
+                    //     fetch("/api/expenses", {
+                    //         method: "DELETE",
+                
+                    //         body: JSON.stringify({_id: data[i]._id}),
+                
+                    //         headers: {
+                    //             "Content-type": "application/json; charset=UTF-8"
+                    //         }
+                    //     })
+                    //     .then(response => response.json())
+                    //     .then(json => {expensesList.removeChild(item) 
+                    //                    expensesList.removeChild(del)})
+                    // })
                 })
             }
         });
