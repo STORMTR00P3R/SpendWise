@@ -5,6 +5,7 @@ let exp = document.getElementById("newExp");
 let newBudget = document.getElementById("newB");
 const expensesList = document.getElementById("expenses-list");
 const expDropdown = document.getElementById("exp");
+const formDropdown = document.getElementById("formDrop");
 let all = document.getElementById("total");
 let emoji = document.getElementById("emoji");
 let total = 0;
@@ -69,7 +70,7 @@ function reset() {
     window.location.reload();
 }
 
-function generateDropdown() {
+function generateDropdown(drop) {
     fetch("/api/categories")
         .then((response) => response.json())
         .then((data) => {
@@ -77,7 +78,7 @@ function generateDropdown() {
                 const opt = document.createElement("option");
                 opt.value = expData.type;
                 opt.textContent = expData.type;
-                expDropdown.append(opt);
+                drop.append(opt);
                 
             });
         });
@@ -141,6 +142,8 @@ function fetchExp() {
                 edit.addEventListener("click", () => {
                     var modal = document.getElementById("editModal");
                     //var yes = document.getElementById("yes");
+                    var editForm = document.getElementById("eForm");
+                    var editField = document.getElementById("editAmount")
                     var span = document.getElementsByClassName("close")[1];
                     modal.style.display = "block";
                     
@@ -148,10 +151,24 @@ function fetchExp() {
                         modal.style.display = "none";
                     }
                     window.onclick = function(event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
                     }
+
+                    editField.value = data[i].amount;
+                    const expCategories = formDropdown.children;
+
+                    for(let j = 0; j < expCategories.length; j++) {
+                        if(data[i].category == expCategories[j].value) {
+                            expCategories[j].selected = true;
+                        }
                     }
+
+                    editForm.addEventListener("submit", (event) => {
+                        event.preventDefault()
+                    })
+
                     // yes.addEventListener("click", (event) => {
                     //     modal.style.display = "none";
                     //     fetch("/api/expenses", {
@@ -174,7 +191,8 @@ function fetchExp() {
 
 fetchExp();
 
-generateDropdown();
+generateDropdown(expDropdown);
+generateDropdown(formDropdown);
 
 expBtn.addEventListener("click", () => {
     if (exp.value !== "") {
