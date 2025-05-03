@@ -10,6 +10,7 @@ let all = document.getElementById("total");
 let emoji = document.getElementById("emoji");
 let total = 0;
 
+
 let hExpenses = [];
 
 // hExpenses = JSON.parse(localStorage.getItem("history"));
@@ -79,7 +80,6 @@ function generateDropdown(drop) {
                 opt.value = expData.type;
                 opt.textContent = expData.type;
                 drop.append(opt);
-                
             });
         });
 }
@@ -92,11 +92,15 @@ function fetchExp() {
             console.log(data)
             for (let i = 0; i < data.length; i++) {
                 let del = document.createElement("button")
-                del.textContent = "Delete Expense"
                 let item = document.createElement("li")
                 item.textContent = "-$" + data[i].amount + " " + data[i].category
                 item.style.color = "red"
                 expensesList.appendChild(item)
+
+                const editD = document.createElement('img')
+                editD.src = 'images/trash.png'
+                editD.classList.add("editB")
+                del.appendChild(editD)
                 expensesList.appendChild(del)
                 
                 del.addEventListener("click", () => {
@@ -136,7 +140,10 @@ function fetchExp() {
                 
 
                 let edit = document.createElement("button")
-                edit.textContent = "Edit Expense"
+                const editE = document.createElement('img')
+                editE.src = 'images/edit.png'
+                editE.classList.add("editB")
+                edit.appendChild(editE)
                 expensesList.appendChild(edit)
 
                 edit.addEventListener("click", () => {
@@ -167,23 +174,24 @@ function fetchExp() {
 
                     editForm.addEventListener("submit", (event) => {
                         event.preventDefault()
+                        
+                        fetch("/api/expenses", {
+                            method: "PUT",
+                
+                            body: JSON.stringify({_id: data[i]._id, category: formDropdown.value, amount: editField.value}),
+                
+                            headers: {
+                                "Content-type": "application/json; charset=UTF-8"
+                            }
+                        })
+                        .then(response => response.json())
+                        .then(respData => { 
+                            modal.style.display = "none"
+                            data[i].amount = respData.amount
+                            data[i].category = respData.category
+                            item.textContent = "-$" + data[i].amount + " " + data[i].category
+                        })
                     })
-
-                    // yes.addEventListener("click", (event) => {
-                    //     modal.style.display = "none";
-                    //     fetch("/api/expenses", {
-                    //         method: "DELETE",
-                
-                    //         body: JSON.stringify({_id: data[i]._id}),
-                
-                    //         headers: {
-                    //             "Content-type": "application/json; charset=UTF-8"
-                    //         }
-                    //     })
-                    //     .then(response => response.json())
-                    //     .then(json => {expensesList.removeChild(item) 
-                    //                    expensesList.removeChild(del)})
-                    // })
                 })
             }
         });
