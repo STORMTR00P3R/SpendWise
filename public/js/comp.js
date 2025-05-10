@@ -93,15 +93,16 @@ function fetchExp() {
             for (let i = 0; i < data.length; i++) {
                 let del = document.createElement("button")
                 let item = document.createElement("li")
-                item.textContent = "-$" + data[i].amount + " " + data[i].category
-                item.style.color = "red"
+                item.classList.add('expense-item')
+                item.textContent = data[i].category + " -$" + data[i].amount
+                item.style.color = "1D1D1D";
                 expensesList.appendChild(item)
 
                 const editD = document.createElement('img')
                 editD.src = 'images/trash.png'
                 editD.classList.add("editB")
                 del.appendChild(editD)
-                expensesList.appendChild(del)
+                item.appendChild(del)
                 
                 del.addEventListener("click", () => {
                     var modal = document.getElementById("myModal");
@@ -144,7 +145,7 @@ function fetchExp() {
                 editE.src = 'images/edit.png'
                 editE.classList.add("editB")
                 edit.appendChild(editE)
-                expensesList.appendChild(edit)
+                item.appendChild(edit)
 
                 edit.addEventListener("click", () => {
                     var modal = document.getElementById("editModal");
