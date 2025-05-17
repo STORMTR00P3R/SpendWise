@@ -95,7 +95,6 @@ function fetchExp() {
                 let item = document.createElement("li")
                 item.classList.add('expense-item')
                 item.textContent = data[i].category + " -$" + data[i].amount
-                item.style.color = "1D1D1D";
                 expensesList.appendChild(item)
 
                 const editD = document.createElement('img')
