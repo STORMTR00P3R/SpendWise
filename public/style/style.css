@@ -45,6 +45,7 @@
 
 button {
   margin-left: 20px;
+  margin-bottom: 0px;
   background-color: #016273;
 }
 
@@ -89,7 +90,16 @@ ul {
 .expense-item {
   background-color: #EAF7FB;
   margin-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-radius: 10px;
   color: #1D1D1D;
   font-family: "Inria Serif";
+}
+
+.expense-item {
+  width: max-content;
+  
 }
