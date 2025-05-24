@@ -44,7 +44,6 @@
 }
   
 button {
-  margin-left: 20px;
   margin-bottom: 0px;
   background-color: #016273;
 }
@@ -90,16 +89,46 @@ ul {
 .expense-item {
   background-color: #EAF7FB;
   margin-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 10px;
   color: #1D1D1D;
   font-family: "Inria Serif";
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .expense-item {
   width: max-content;
   
+}
+
+.images {
+  background-color: #016273;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.images > img {
+  height: 30px;
+  width: 30px;
+}
+
+.mText {
+  color: #1D1D1D;
+}
+
+input#editAmount {
+  color: #1D1D1D;
+}
+
+select#formDrop {
+  color: #1D1D1D;
 }

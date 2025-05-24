@@ -1,4 +1,4 @@
-let amountInput = document.getElementById("newBudget");
+    let amountInput = document.getElementById("newBudget");
 let changeBtn = document.getElementById("Achange");
 let expBtn = document.getElementById("Echange");
 let exp = document.getElementById("newExp");
@@ -10,6 +10,23 @@ let all = document.getElementById("total");
 let emoji = document.getElementById("emoji");
 let total = 0;
 
+let categoryMap = {
+    childcare: "images/childcare.png",
+    clothing: "images/clothing.png",
+    debt: "images/debt.png",
+    education: "images/education.png",
+    entertainment: "images/entertainment.png",
+    food: "images/food.png",
+    healthcare: "images/healthcare.png",
+    housing: "images/housing.png",
+    insurance: "images/insurance.png",
+    miscellaneous: "images/misc.png",
+    savings: "images/savings.png",
+    transportation: "images/transportation.png",
+    utilities: "images/utilities.png",
+    "personal care": "images/personal.png",
+    "gifts & donations": "images/gifts.png"
+}
 
 let hExpenses = [];
 
@@ -93,10 +110,20 @@ function fetchExp() {
             for (let i = 0; i < data.length; i++) {
                 let del = document.createElement("button")
                 let item = document.createElement("li")
+
                 item.classList.add('expense-item')
+                let imgContainer = document.createElement("div")
+                imgContainer.classList.add('images')
+                let img = document.createElement("img")
+                let currentCategory = data[i].category.toLowerCase()
+                img.src = categoryMap[currentCategory]      
+                imgContainer.append(img)
                 item.textContent = data[i].category + " -$" + data[i].amount
+                item.prepend(imgContainer)
+                
                 expensesList.appendChild(item)
 
+                
                 const editD = document.createElement('img')
                 editD.src = 'images/trash.png'
                 editD.classList.add("editB")
