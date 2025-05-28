@@ -16,11 +16,15 @@
   
   /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #EAF7FB;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 30%; /* Could be more or less, depending on screen size */
+}
+
+#editAmount {
+  margin-bottom: 20px;
 }
   
   /* The Close Button */
@@ -43,6 +47,10 @@
   width: 20px;
 }
   
+body, h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 button {
   margin-bottom: 0px;
   background-color: #016273;
@@ -131,4 +139,17 @@ input#editAmount {
 
 select#formDrop {
   color: #1D1D1D;
+}
+
+.loginBody {
+  display: flex;
+  height: 100%;
+  align-content: center;
+  justify-content: center;
+}
+
+.login {
+  background-color: #2b2b2b;
+  height: 200px;
+  width: 200px;
 }
