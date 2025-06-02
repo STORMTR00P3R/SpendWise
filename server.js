@@ -4,6 +4,7 @@ import path from 'path'
 import { expenseRouter } from './routes/expenseRouter.js'
 import { statesRouter } from './routes/statesRouter.js'
 import { catagoryRouter } from './routes/catagoryRouter.js';
+import { userRouter } from './routes/userRouter.js';
 
 const __dirname = path.resolve();
 const app = express();
@@ -20,6 +21,8 @@ app.use('/api/categories', catagoryRouter)
 app.use('/api/states', statesRouter)
 
 app.use('/api/expenses', expenseRouter)
+
+app.use('/api/auth', userRouter)
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
