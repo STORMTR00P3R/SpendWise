@@ -1,4 +1,4 @@
-    let amountInput = document.getElementById("newBudget");
+let amountInput = document.getElementById("newBudget");
 let changeBtn = document.getElementById("Achange");
 let expBtn = document.getElementById("Echange");
 let exp = document.getElementById("newExp");

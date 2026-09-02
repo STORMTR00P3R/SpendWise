@@ -8,9 +8,11 @@ import { userRouter } from './routes/userRouter.js';
 
 const __dirname = path.resolve();
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080
 
-mongoose.connect('mongodb://127.0.0.1:27017/betwise').then(() => console.log('Connected!'));
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('Connected!'))
+  .catch(err => console.error('MongoDB connection error:', err));
 
 
 app.use(express.static(path.join(__dirname, 'public')))

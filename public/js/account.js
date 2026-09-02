@@ -6,9 +6,11 @@
 class Account {
   constructor() {
     this._balance = (2500.0).toFixed(2);
+    console.log("working");
   }
 
   updateBalance(amount, type) {
+    this._balance = parseInt(this._balance);
     if (type == "loss") {
       this._balance -= amount;
     } else {

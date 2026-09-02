@@ -40,7 +40,7 @@ addBtn.addEventListener("click", () => {
     let type = amountType.value;
     let item = document.createElement("li");
 
-    // FIXME: Expenses label is recreated on every click
+    // FIXME: Expenses label is recreated on every click    
     let expObj = document.createElement("p");
     expObj.textContent = "Expenses";
     let prefix = "";
