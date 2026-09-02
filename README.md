@@ -71,33 +71,13 @@ states.json            Per-state budget averages
 cata.json              Spending categories with examples
 ```
 
-## API
-
-All endpoints return JSON.
-
-| Method | Endpoint | Body | Description |
-| --- | --- | --- | --- |
-| `POST` | `/api/auth/register` | `username`, `password` | Create an account |
-| `POST` | `/api/auth/login` | `username`, `password` | Authenticate |
-| `GET` | `/api/expenses` | — | List expenses |
-| `POST` | `/api/expenses` | `amount`, `category` | Create an expense |
-| `PUT` | `/api/expenses` | `_id`, `amount`, `category` | Update an expense |
-| `DELETE` | `/api/expenses` | `_id` | Delete an expense |
-| `GET` | `/api/states` | — | State budget averages |
-| `GET` | `/api/categories` | — | Spending categories |
-
 ## Roadmap
 
 - **Per-user data scoping.** Expenses currently have no owner field, so the collection is global. Adding a user reference to `expenseSchema` and filtering every query by the signed-in user is the next substantial piece of work.
 - **Session management.** Login verifies credentials but issues nothing. Sessions or JWTs, plus auth middleware on the expense routes, follow directly from the point above.
 - **Configuration via environment variables.** Port and Mongo URI should not be hardcoded.
-- **Real state data.** The averages in `states.json` are placeholders and deserve a real source.
 - **Product comparison.** Translating a running loss total into equivalents — a month of groceries, a plane ticket — to make the number concrete.
 - **Persistence of budget state.** Budget and progress live in `localStorage`; they should move server-side alongside the expenses.
-
-## Notes
-
-The package name, several page titles, and the original working name refer to this project as **BetWise**. SpendWise is the current name.
 
 ## License
 
