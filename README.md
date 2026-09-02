@@ -15,7 +15,6 @@ A large share of the Las Vegas economy runs on gambling, and the spending is eas
 - **Categorized expenses** — fifteen spending categories, each with its own icon
 - **Progress bar** — a visual meter of how much of the budget is gone, with an emoji that gets progressively less cheerful
 - **Edit and delete** — modify or remove any logged expense through a confirmation modal
-- **Accounts** — registration and login with bcrypt-hashed passwords
 - **Resources page** — links and guidance on responsible spending habits
 
 ## Stack
@@ -24,7 +23,6 @@ A large share of the Las Vegas economy runs on gambling, and the spending is eas
 | --- | --- |
 | Server | Node.js, Express 4 |
 | Database | MongoDB via Mongoose 8 |
-| Auth | bcrypt |
 | Frontend | Vanilla JavaScript, HTML, CSS |
 | Hosting | Self-managed Ubuntu VPS behind NGINX |
 
@@ -60,7 +58,6 @@ routes/
 public/
   index.html           Main tracker
   comp.html            Compound budget view
-  login.html           Login and registration
   re.html              Responsible spending resources
   js/
     account.js         Balance model
